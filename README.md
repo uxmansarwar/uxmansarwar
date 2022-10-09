@@ -4,7 +4,7 @@ I,m primarily a back-end developer, although I am **comfortable in PHP/MySql, PH
 
 <br>
 
-## <a href="mailto:uxmansarwar@yahoo.com">Email: UxmanSarwar@yahoo.com</a>
+## <a href="mailto:uxmansarwar@yahoo.com">Email: UXManSarwar@yahoo.com</a>
 
 <br>
 <br>
@@ -14,11 +14,15 @@ I,m primarily a back-end developer, although I am **comfortable in PHP/MySql, PH
 
 <div align="left">
 
-| Title    | Link                                                                                                          |
-| -------- | ------------------------------------------------------------------------------------------------------------- |
-| FaceBook | <a target="_blank" href="https://www.facebook.com/uxmanserwar">https://www.facebook.com/uxmanserwar</a>       |
-| Fiverr   | <a target="_blank" href="https://www.fiverr.com/musmansarwer">https://www.fiverr.com/musmansarwer</a>         |
-| LinkedIn | <a target="_blank" href="https://www.linkedin.com/in/uxmansarwar">https://www.linkedin.com/in/uxmansarwar</a> |
+| Title     | Link                                                                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| FaceBook  | <a target="_blank" href="https://www.facebook.com/uxmanserwar">facebook.com/uxmanserwar</a>                                                |
+| Fiverr    | <a target="_blank" href="https://www.fiverr.com/musmansarwer">fiverr.com/musmansarwer</a>                                                  |
+| LinkedIn  | <a target="_blank" href="https://www.linkedin.com/in/uxmansarwar">linkedin.com/in/uxmansarwar</a>                                          |
+| Instagram | <a target="_blank" href="https://www.instagram.com/us.mansarwar">instagram.com/US.ManSarwar</a>                                            |
+| YouTube   | <a target="_blank" href="https://www.youtube.com/channel/UCAFSYxV--P-8ChHIQI3EQsg">youtube.com/channel/UCAFSYxV--P-8ChHIQI3EQsg</a>        |
+| Upwork    | <a target="_blank" href="https://www.upwork.com/o/profiles/users/~01674525c6f729ff52/">upwork.com/o/profiles/users/~01674525c6f729ff52</a> |
+| Google    | <a target="_blank" href="https://g.dev/uxmansarwar">developers.google.com/profile/u/uxmansarwar</a> |
 
  </div>
 
