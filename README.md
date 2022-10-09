@@ -1,4 +1,3 @@
-
 <h1>Usman Sarwar</h1>
 
 I,m primarily a back-end developer, although I am **comfortable in PHP/MySql, PHP Laravel**, vanilla javascript, jQuery, HTML, CSS, and BootStrap. **Excellent skills in core PHP/MySql development**. And I am Working on these technologies since 2013.
@@ -6,8 +5,6 @@ I,m primarily a back-end developer, although I am **comfortable in PHP/MySql, PH
 <br>
 
 ## <a href="mailto:uxmansarwar@yahoo.com">Email: UxmanSarwar@yahoo.com</a>
-
-
 
 <br>
 <br>
@@ -27,31 +24,42 @@ I,m primarily a back-end developer, although I am **comfortable in PHP/MySql, PH
 
 ```json
 {
-  "job":          "Developer",
-  "email":        "uxmansarwar@yahoo.com",
-  "phone":        "+923077506461",
-  "country":      "Pakistan",
-  "stack":        ["PHP", "MySQL", "HTML", "CSS", "JS", "React Native", "jQuery", "Bash", "..."],
-  "interest":     ["Clean Code", "Testing", "Static Code Analysis", "Linux", "..."],
-  "quote":        "Don't care who doing better than me, I only try to do better than my own previous days(Usman Sarwar)",
-  "naming-slugs": ["usmansarwar","uxmansarwar", "usmandev5", "uxmandev5"],
+	"job": "Developer",
+	"email": "uxmansarwar@yahoo.com",
+	"phone": "+923077506461",
+	"country": "Pakistan",
+	"stack": [
+		"PHP",
+		"MySQL",
+		"HTML",
+		"CSS",
+		"JS",
+		"React Native",
+		"jQuery",
+		"Bash",
+		"..."
+	],
+	"interest": ["Clean Code", "Testing", "Static Code Analysis", "Linux", "..."],
+	"quote": "Don't care who doing better than me, I only try to do better than my own previous days(Usman Sarwar)",
+	"naming-slugs": ["usmansarwar", "uxmansarwar", "usmandev5", "uxmandev5"],
 
-  "description": "'Client satisfaction is my first priority.\n'+
-'I,m primarily a back-end developer, although I am comfortable in PHP/MySql, PHP Laravel, vanilla javascript, jQuery, HTML, CSS, and BootStrap. Excellent skills in core PHP/MySql development. And I am Working on these technologies since 2013.\n'+
-'\n'+
-'I,m looking for opportunities to build websites from the ground up for you or your business.\n'+
-'I like to build long-term relations with my clients and always make suggestions that will help in the long term.\n'+
-'\n'+
-'What you can expect from me:\n'+
-'- Very fast response from my end.\n'+
-'- Detail-oriented conversation which helps to improve working as per requirements.\n'+
-'- Clean code which will be very understandable for machines and humans.\n'+
-'- On-time delivery.\n'+
-'- Always provide support for work I have done, if found any issues.\n'+
-'\n'+
-'Feel free to contact me for my services\n'+
-'Thank You\n'+
-"
+	"description": [
+		"Client satisfaction is my first priority.",
+		"I,m primarily a back-end developer, although I am comfortable in PHP/MySql, PHP Laravel, vanilla javascript, jQuery, HTML, CSS, and BootStrap. Excellent skills in core PHP/MySql development. And I am Working on these technologies since 2013.",
+		"",
+		"I,m looking for opportunities to build websites from the ground up for you or your business.",
+		"I like to build long-term relations with my clients and always make suggestions that will help in the long term.",
+		"",
+		"What you can expect from me:",
+		"- Very fast response from my end.",
+		"- Detail-oriented conversation which helps to improve working as per requirements.",
+		"- Clean code which will be very understandable for machines and humans.",
+		"- On-time delivery.",
+		"- Always provide support for work I have done, if found any issues.",
+		"",
+		"Feel free to contact me for my services",
+		"Thank You"
+	]
 }
 ```
 
