@@ -1,5 +1,5 @@
 <h3>Uxman Sarwar</h3>
-<p>Full-Stack Developer | MVS Expert</p>
+<p>Full-Stack Developer | MVC Expert</p>
 
 <!-- ## <a href="mailto:uxmansarwar@yahoo.com">Email: UXManSarwar@yahoo.com</a> -->
 
