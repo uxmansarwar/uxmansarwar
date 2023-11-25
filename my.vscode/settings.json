@@ -1,0 +1,29 @@
+{
+	// "git.autofetch": true,
+	"workbench.iconTheme": "vscode-icons",
+	"files.autoSave": "onWindowChange",
+	// "diffEditor.ignoreTrimWhitespace": true,
+	"php.validate.executablePath": "C:/xampp/php/php.exe",
+	"editor.wordWrap": "on",
+	"editor.fontSize": 18,
+	"workbench.editor.wrapTabs": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSaveMode": "modifications",
+	"editor.formatOnType": true,
+	"editor.formatOnSave": true,
+	// "editor.autoIndent": "none",
+	"prettier.useTabs": true,
+
+	"cSpell.ignoreWords": ["address", "email", "insert"],
+	// "workbench.editor.enablePreview": false,
+	"[javascript]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "vscode.typescript-language-features"
+	},
+	"files.associations": {
+		"*.tpl": "php"
+	},
+	"cSpell.words": ["Uxman", "sarwar", "uxmansarwar"]
+}
