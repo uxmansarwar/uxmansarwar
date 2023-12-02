@@ -14,3 +14,14 @@ function dbg($data = '')
     echo 'Script execution Time is :::: ' . (microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) . '<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
     exit();
 }
+
+
+function mysqliConn($host, $user, $pass, $db_name): mysqli
+{
+    return new mysqli(
+        $host,
+        $user,
+        $pass,
+        $db_name
+    );
+}

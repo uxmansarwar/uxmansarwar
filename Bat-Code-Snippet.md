@@ -8,7 +8,7 @@ Copy the given code and save in a BAT (Window command file) and run it. before a
 
 
 ```
-ssh -ND 11235 -i C:\Users\muham\Desktop\ssh_tunnel.id_rsa ssh_tunnel@162.0.228.9
+ssh -ND 11235 -i C:\Users\muham\Desktop\ssh_tunnel.id_rsa ssh_tunnel@12.0.28.9
 ```
 
 
