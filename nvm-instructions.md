@@ -1,4 +1,4 @@
-# NVM Installation instructions
+# NVM instructions Linux(Ubuntu)
 
 ## Before Installation
 ```bash
