@@ -94,3 +94,9 @@ const randomNumber = (max = 100, min = 0) => Math.floor((Math.random() * max) + 
 
 const isEmpty = prm => prm == '' || prm.length == 0 ? true : false;
 
+/**
+ * @array _ array only
+ * @returns unique array
+ * @returnType @array
+ */
+const arrayUnique = _ => _.filter((v, i, a) => a.indexOf(v) === i);

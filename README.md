@@ -11,10 +11,10 @@
 
 | Title     | Link                                                                                                                                       |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| FaceBook  | <a target="_blank" href="https://www.facebook.com/uxmnsarwar">facebook.com/uxmnsarwar</a>                                                |
+| FaceBook  | <a target="_blank" href="https://www.facebook.com/uxmansrwr">facebook.com/uxmansrwr</a>                                                |
 | Fiverr    | <a target="_blank" href="https://www.fiverr.com/musmansarwer">fiverr.com/musmansarwer</a>                                                  |
 | LinkedIn  | <a target="_blank" href="https://www.linkedin.com/in/uxmansarwar">linkedin.com/in/uxmansarwar</a>                                          |
-| Instagram | <a target="_blank" href="https://www.instagram.com/uxmnsarwar">instagram.com/uxmnsarwar</a>                                            |
+| Instagram | <a target="_blank" href="https://www.instagram.com/uxmansrwr">instagram.com/uxmansrwr</a>                                            |
 | YouTube   | <a target="_blank" href="https://www.youtube.com/@uxmansarwar">youtube.com/@uxmansarwar</a>        |
 | Upwork    | <a target="_blank" href="https://www.upwork.com/o/profiles/users/~01674525c6f729ff52/">upwork.com/o/profiles/users/~01674525c6f729ff52</a> |
 | Google    | <a target="_blank" href="https://g.dev/uxmansarwar">developers.google.com/profile/u/uxmansarwar</a> |
@@ -24,7 +24,7 @@
 ```json
 {
 	"job": "Developer",
-	"email": "uxmansarwar@yahoo.com",
+	"email": "uxmansrwr@gmail.com",
 	"phone": "+923077506461",
 	"country": "Pakistan",
 	"stack": [
@@ -41,7 +41,7 @@
 	],
 	"interest": ["Clean Code", "Testing", "Static Code Analysis", "Linux", "..."],
 	"quote": "Don't care who doing better than me, I only try to do better than my own previous days(Uxman Sarwar)",
-	"naming-slugs": ["uxmansarwar", "uxmnsarwar"],
+	"naming-slugs": ["uxmansarwar", "uxmansrwr"],
 
 	"description": [
 		"Client satisfaction is my first priority.",
