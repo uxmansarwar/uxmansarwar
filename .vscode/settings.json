@@ -1,0 +1,58 @@
+{
+    // "git.autofetch": true,
+    "workbench.iconTheme": "vscode-icons",
+    "files.autoSave": "onWindowChange",
+    // "diffEditor.ignoreTrimWhitespace": true,
+    "php.validate.executablePath": "C:/xampp/php/php.exe",
+    "editor.wordWrap": "on",
+    "editor.fontSize": 16,
+    "workbench.editor.wrapTabs": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    // "editor.autoIndent": "none",
+    "prettier.useTabs": true,
+
+    "cSpell.ignoreWords": [
+			"naeem",
+			"rizwan",
+			"address",
+			"address",
+			"email",
+			"insert",
+			"sarwar",
+			"uxman",
+			"uxmansarwar",
+			"uxmnsarwar"
+		],
+    // "workbench.editor.enablePreview": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "files.associations": {
+        "*.tpl": "php"
+    },
+    "cSpell.words": [
+			"bitwarden",
+			"canva",
+			"Fiverr",
+			"Hussain",
+			"Laravel",
+			"Parveen",
+			"Sarwar",
+			"Shabana",
+			"tariq",
+			"upwork",
+			"Uxman",
+			"uxmansarwar",
+			"uxmnsarwar",
+			"xvideos",
+			"Zahida",
+			"zahidaparveen",
+			"zhidaprvn"
+		]
+}
