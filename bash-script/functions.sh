@@ -7,3 +7,7 @@ check_and_install() {
         sudo apt update && sudo apt install -y $package
     fi
 }
+
+is_on_battery() {
+    upower -i $(upower -e | grep 'BAT') | grep -q "state:.*discharging"
+}
