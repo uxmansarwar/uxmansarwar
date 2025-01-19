@@ -18,6 +18,7 @@
 | YouTube   | <a target="_blank" href="https://www.youtube.com/@uxmansarwar">youtube.com/@uxmansarwar</a>        |
 | Upwork    | <a target="_blank" href="https://www.upwork.com/o/profiles/users/~01674525c6f729ff52/">upwork.com/o/profiles/users/~01674525c6f729ff52</a> |
 | Google    | <a target="_blank" href="https://g.dev/uxmansarwar">developers.google.com/profile/u/uxmansarwar</a> |
+| Google    | <a target="_blank" href="https://meet.google.com/ffy-crcm-rmf">https://meet.google.com/ffy-crcm-rmf</a> |
 
  </div>
 
