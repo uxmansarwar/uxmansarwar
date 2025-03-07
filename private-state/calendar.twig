@@ -1,0 +1,331 @@
+{% extends 'base.twig' %}
+
+{% block page_title %}
+	{{ i18n.getMessage('calendar_navlabel') }}
+{% endblock %}
+
+{% block page_content %}
+	<style>
+		.calendar {
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+		}
+		.calendar-header,
+		.calendar-row {
+			display: table-row;
+		}
+		.calendar-cell {
+			display: table-cell;
+			border: 1px solid #ddd;
+			vertical-align: top;
+			padding: 10px;
+		}
+		.calendar-cell .date {
+			font-weight: bold;
+		}
+		.event {
+			margin-top: 5px;
+			padding: 5px;
+			border-radius: 5px;
+			font-size: 0.9em;
+		}
+		.event.mandatory {
+			background-color: #d9534f;
+			color: white;
+		}
+		.event.friendly {
+			background-color: #5bc0de;
+			color: white;
+		}
+		.event.youth {
+			background-color: #5cb85c;
+			color: white;
+		}
+		.event.user {
+			background-color: #f0ad4e;
+			color: white;
+		}
+		.legend {
+			margin-top: 20px;
+		}
+		.legend-item {
+			display: flex;
+			align-items: center;
+			margin-bottom: 5px;
+		}
+		.legend-icon {
+			width: 15px;
+			height: 15px;
+			margin-right: 5px;
+			border-radius: 3px;
+		}
+		.calendar-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+		.calendar-nav .btn {
+			padding: 5px 10px;
+		}
+		.calendar-nav .title {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+	</style>
+	<div class="container-fluid">
+		<div class="calendar-nav">
+			<div>
+				<a href="{{ calendar_previous }}" class="btn btn-small btn-default">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewbox="0 0 16 16">
+						<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L6.707 7l4.647 4.646a.5.5 0 0 1-.708.708l-5-5a.5.5 0 0 1 0-.708l5-5a.5.5 0 0 1 .708 0z"/>
+					</svg>
+				</a>
+				{# <button class="btn btn-small btn-default">Current</button> #}
+				<a href="{{ calendar_next }}" class="btn btn-small btn-default">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewbox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l5 5a.5.5 0 0 1 0 .708l-5 5a.5.5 0 0 1-.708-.708L9.293 8 4.646 3.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+				</a>
+				<a href="/index.php?page=calendar&calendar_selected_date={{ today_date }}" class="btn btn-small btn-default">Today</a>
+			</div>
+			<div class="title">{{ date_data.month_name }}
+				{{ date_data.year }}</div>
+			<div>
+				{# <a href="/index.php?page=createappointment" class="btn btn-small btn-default">Create</a> #}
+				<a href="/index.php?page=calendar&calendar_selected_date={{ today_date }}" class="btn btn-small btn-default">Month</a>
+				<a href="/index.php?page=calendar&view_as=week&calendar_selected_date={{ today_date }}" class="btn btn-small btn-default">Week</a>
+			</div>
+		</div>
+		<div class="calendar">
+
+			{% if view_as == 'week'%}
+				{% for key, week_wise_date_data in date_data.calendar %}
+					{% if view_as == 'week' and date_data.current_week_key_in_calendar != key %}
+
+						{% else %}
+							{% for index in week_wise_date_data %}
+								<div class="calendar-row">
+									<div class="calendar-cell" style="height: 70px !important; width: 70px !important; display: inline-block !important; {{ today_date == index.date ? 'background-color: rgba(173, 216, 230, 0.5);' : '' }}">
+										<div class="date pull-left">
+											<a href="/index.php?page=createappointment&date={{ index.date }}">
+												<i class="icon-plus-sign"></i>
+											</a>
+										</div>
+										<div class="date pull-right">{{ index.day }}</div>
+										<div class="" style="margin-top: 30px; margin-left: 15px; font-size: 20px;">
+											{{ index.day_of_week }}
+										</div>
+									</div>
+									{% for appointment in index.appointments %}
+										{% if appointment.user_id == user_id or appointment.user_type == 'admin' %}
+											<div class="calendar-cell" style="height: 70px !important; width: 92px !important; display: inline-block !important; {{ today_date == index.date ? 'background-color: rgba(173, 216, 230, 0.5);' : '' }}">
+												<div class="event mandatory" style="background-color: {{ appointment.color_code }} !important;">
+													{{ appointment.c_start_time }}
+													h<br/>
+													{% if appointment.is_match %}
+														<a href="{{ appointment.link }}" style="color: white;">{{ appointment.c_heading|slice(0, 18) }}</a>
+													{% else %}
+														<a href="/index.php?page=user_appointment&appointment_id={{ appointment.id }}" style="color: white;">{{ appointment.c_heading|slice(0, 18) }}</a>
+													{% endif %}
+												</div>
+											</div>
+										{% endif %}
+									{% endfor %}
+									{# <div class="calendar-cell" style="height: 70px !important; width: 92px !important; display: inline-block !important; {{ today_date == index.date ? 'background-color: rgba(173, 216, 230, 0.5);' : '' }}">
+										<div class="event mandatory" style="background-color: gray !important;">
+											13:00 h<br>
+											<a href="/?page=youth-match&amp;id=110" style="color: white;">SCF vs. FCH 3 - 4</a>
+										</div>
+									</div> #}
+								</div>
+							{% endfor %}
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				<div class="calendar-header">
+					<div class="calendar-cell">Mon</div>
+					<div class="calendar-cell">Tue</div>
+					<div class="calendar-cell">Wed</div>
+					<div class="calendar-cell">Thu</div>
+					<div class="calendar-cell">Fri</div>
+					<div class="calendar-cell">Sat</div>
+					<div class="calendar-cell">Sun</div>
+				</div>
+				<style>
+					/* Custom styling for dropdown items */
+					.dropdown-menu-calendar {
+						display: none; /* Hidden by default */
+						position: absolute;
+						top: 100%;
+						left: 0;
+						z-index: 1000;
+						float: left;
+						min-width: 160px;
+						padding: 5px 0;
+						margin: 2px 0 0;
+						list-style: none;
+						background-color: #fff;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+					}
+					.dropdown-menu-calendar li {
+						width: 100%;
+					}
+
+					.dropdown-menu-calendar li a {
+						display: block;
+						width: 100%;
+						padding: 10px; /* Ensures enough clickable area */
+						text-decoration: none; /* Removes underline */
+						border-radius: 0; /* Ensures a rectangular shape */
+					}
+
+					.dropdown-menu-calendar li:nth-child(1) a {
+						background-color: #ff9999; /* Light Red */
+						color: #fff;
+					}
+					.dropdown-menu-calendar li:nth-child(2) a {
+						background-color: #99ccff; /* Light Blue */
+						color: #fff;
+					}
+					.dropdown-menu-calendar li:nth-child(3) a {
+						background-color: #99ff99; /* Light Green */
+						color: #fff;
+					}
+					.dropdown-menu-calendar li a:hover {
+						filter: brightness(0.9);
+					}
+					.dropdown-menu-calendar li a::after {
+						content: '\2192'; /* Unicode arrow symbol */
+						float: right;
+					}
+				</style>
+				{% for key, week_wise_date_data in date_data.calendar %}
+					{% if view_as == 'week' and date_data.current_week_key_in_calendar != key %}
+
+						{% else %}
+							<div class="calendar-row">
+								{% for index in week_wise_date_data %}
+									<div class="calendar-cell" style="height: 70px !important; {{ today_date == index.date ? 'background-color: rgba(173, 216, 230, 0.5);' : '' }}">
+										<div class="date pull-left">
+											<a href="/index.php?page=createappointment&date={{ index.date }}">
+												<i class="icon-plus-sign"></i>
+											</a>
+										</div>
+										<div class="date pull-right">{{ index.day }}</div>
+										{% if (index.appointments|length) > 0 %}
+											{% if (index.appointments|length) == 1 %}
+												{# Code to display if the condition is true #}
+												{% for appointment in index.appointments %}
+													{% if appointment.user_id == user_id or appointment.user_type == 'admin' %}
+														<div class="event mandatory" style="background-color: {{ appointment.color_code }} !important; margin-top: 30px;">
+															{{ appointment.c_start_time }}
+															h<br/>
+															{% if appointment.is_match %}
+																<a href="{{ appointment.link }}" style="color: white;">{{ appointment.c_heading|slice(0, 18) }}</a>
+															{% else %}
+																<a href="/index.php?page=user_appointment&appointment_id={{ appointment.id }}" style="color: white;">{{ appointment.c_heading|slice(0, 18) }}</a>
+															{% endif %}
+														</div>
+													{% endif %}
+												{% endfor %}
+											{% else %}
+												{# <div class="event mandatory">else here</div> #}
+												<div class="dropdown drop_down_selector" style="margin-top: 20px;">
+													<a class="btn dropdown-toggle drop_down_menu_btn" href="#" id="dropdownButton">View All For Today<span class="caret"></span>
+													</a>
+													<ul class="dropdown-menu-calendar" id="dropdownMenu">
+														{% for appointment in index.appointments %}
+															{% if appointment.user_id == user_id or appointment.user_type == 'admin' %}
+																<li>
+																	{% if appointment.is_match %}
+																		<a href="{{ appointment.link }}" style="background-color: {{ appointment.color_code }} !important; color: white;">
+																			{{ appointment.c_start_time }}
+																			h<br/>
+																			{{ appointment.c_heading|slice(0, 20) }}
+																		</a>
+																	{% else %}
+																		<a href="/index.php?page=user_appointment&appointment_id={{ appointment.id }}" style="background-color: {{ appointment.color_code }} !important; color: white;">
+																			{{ appointment.c_start_time }}
+																			h<br/>
+																			{{ appointment.c_heading|slice(0, 20) }}
+																		</a>
+																	{% endif %}
+																</li>
+															{% endif %}
+														{% endfor %}
+													</ul>
+												</div>
+											{% endif %}
+										{% endif %}
+									</div>
+								{% endfor %}
+							</div>
+					{% endif %}
+				{% endfor %}
+
+			{% endif %}
+
+
+			<script>
+				// JavaScript for Dropdown
+window.addEventListener('load', function () {
+let drop_down_menu_btn = document.querySelectorAll('.drop_down_menu_btn')
+let showing = false
+const dropdownButton = document.getElementById('dropdownButton')
+const dropdownMenu = document.getElementById('dropdownMenu')
+function closeOpenedDDM() {
+document.querySelectorAll('.drop_down_selector').forEach((e) => (e.querySelector('ul').style.display = 'none'))
+}
+
+// Toggle dropdown visibility on button click
+drop_down_menu_btn.forEach((elem) => elem.addEventListener('click', function (event) {
+console.log(event)
+closeOpenedDDM()
+event.preventDefault() // Prevent default anchor behavior
+let selected_menu = event.target ?. closest('.drop_down_selector') ?. querySelector('ul')
+if (selected_menu.style.display === 'block') {
+selected_menu.style.display = 'none'
+} else {
+selected_menu.style.display = 'block'
+showing = true
+}
+}))
+document.body.addEventListener('click', function (e) {
+if (e ?. target ?. tagName ?. toLowerCase() != 'a') {
+closeOpenedDDM()
+}
+})
+})
+			</script>
+			<!-- More rows here -->
+		</div>
+
+		<div class="legend">
+			<h4>Legend</h4>
+			<div class="legend-item">
+				<div class="legend-icon" style="background-color: {{ color_code_for_competitive_matches }};"></div>
+				<span>Competitive Matches.</span>
+			</div>
+			<div class="legend-item">
+				<div class="legend-icon" style="background-color: {{ color_code_for_friendly_matches }};"></div>
+				<span>Friendly Matches.</span>
+			</div>
+			<div class="legend-item">
+				<div class="legend-icon" style="background-color: {{ color_code_for_youth_matches }};"></div>
+				<span>Youth Matches.</span>
+			</div>
+			<div class="legend-item">
+				<div class="legend-icon" style="background-color: {{ color_code_for_user_appointments }};"></div>
+				<span>User Appointments.</span>
+			</div>
+			<div class="legend-item">
+				<div class="legend-icon" style="background-color: {{ color_code_for_admin_appointments }};"></div>
+				<span>Admin Appointments.</span>
+			</div>
+		</div>
+	</div>
+{% endblock %}
